@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Membership Form</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+<style>
+	body{
+		background: var(--bs-light);
+	}
+	form{
+		margin-bottom: 30px;
+	}
+
+	label{
+		font-size: 0.8em;
+	}
+	
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] {
+	  -moz-appearance: textfield;
+	}
+
+	.wrapper{
+		margin: auto;
+	}
+
+	.organization{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--bs-green);
+		color: #fff;
+	}
+	.description{
+		margin: 20px 8px;
+	}
+	.logo{
+		width: 100px;
+		margin-right: 20px; 
+	}
+	.logo img{
+		width: 100%;
+	}
+	.organization .name h1{
+		margin: 5px 0px;
+	}
+	.section {
+		border: 1px solid #efefef;
+		border-radius: 5px;
+		margin: 20px 0;
+		padding-bottom: 20px;
+	}
+	.section .head{
+		background: var(--bs-green);
+		color: #fff;
+		padding: 12px 8px;
+		box-sizing: border-box;
+		margin:0;
+	}
+	.sample-applicant-with-id{
+		text-align: center;
+	}
+	.sample-applicant-with-id img{
+		width: 300px;
+	}
+	.date-converter{
+		position: fixed;
+		right: 12px;
+		bottom: 20px;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		background: var(--bs-light);
+	}
+	.date-converter .icon{
+		background: var(--bs-green);
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		width: 76px;
+		height: 76px;
+		line-height: 1em;
+		border-radius: 50%;
+		font-size: 10px;
+		cursor: pointer;
+	}
+	.date-converter i{
+		font-size: 20px;
+		margin-bottom: 6px;
+	}
+	.date-converter iframe{
+		margin-right: 12px;
+		display: none;
+	}
+	.date-converter iframe body{
+	}
+	.message{
+		position: fixed;
+		top:20px;
+		left: 50%;
+		transform: translate(-50%);
+		display: none;
+	}
+	.message>div{
+		padding: 6px 12px;
+		border-radius: 12px
+	}
+</style>
+<body>
+
+<div class="wrapper container">
+
+	<div class="organization">
+		<div class="logo">
+			<img src="logo.jpg" alt="">
+		</div>
+		<div class="details">
+			<div class="name">
+				<h1 class="name-nepali">सहकारी सन्स्थ</h1>
+				<h1 class="name-english">Sahakari Sanstha</h1>
+			</div>
+			<div class="address">Dhangadhi-06, Kailali</div>
+		</div>
+	</div>
+
+	<div class="description text-justify">
+		Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, ut ullam adipisci deserunt non expedita eaque minima ex. Perspiciatis nisi deserunt omnis voluptatem numquam dicta, id recusandae eligendi soluta nulla! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit officia vel distinctio illum facilis ipsum natus, at nostrum aliquid, consequatur provident cum quod odio similique alias, perspiciatis repellendus. Voluptatibus, distinctio. dolor sit amet consectetur adipisicing elit. Pariatur ullam quod, maiores! Id eos vitae perferendis, minus sunt nisi dolor optio blanditiis consequuntur, distinctio tempora animi facilis iste placeat, quidem.
+	</div>
+
+	<form id="#form">
+		
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Personal Details / व्यक्तिगत विवरण </div>
+			<div class="col-md-4">
+			    <label for="applicant_title" class="form-label">Title / शीर्षक <span class="text-danger"> *</span> </label>
+			    <select name="applicant_title" id="applicant_title" class="form-select" required>
+			      <option value="Mr." selected>Mr.</option>
+			      <option value="Mrs.">Mrs.</option>
+			      <option value="Miss">Miss</option>
+			      <option value="Minor">Minor</option>
+			  	</select>
+			</div>
+
+		  	<div class="col-md-4">
+				<label class="form-label" for="applicant_first_name">Applicant First Name / आवेदकको पहिलो नाम <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_first_name" id="applicant_first_name" placeholder="Ram" required>	
+			</div>
+
+			<div class=" col-md-4">
+				<label class="form-label" for="applicant_middle_name">Applicant Middle Name / आवेदकको बीचको  नाम </label>
+				<div class="">
+					<input type="text" class="form-control" name="applicant_middle_name" id="applicant_middle_name" placeholder="Bahadur" >
+				</div>
+			</div>
+
+		  	<div class=" col-md-4">
+				<label class="form-label" for="applicant_last_name" >Applicant Last Name / आवेदकको थर <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_last_name" id="applicant_last_name" placeholder="Thapa" required>
+			</div>
+
+		  	<div class=" col-md-8">
+				<label for="applicant_full_name" class="form-label">Applicant Full Name / आवेदकको नाम <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_full_name" id="applicant_full_name" placeholder="Ram Bahadur Thapa" required>
+			</div>
+
+		  	<div class=" col-md-4">
+				<label for="applicant_dob_BS" class="form-label">Date Of Birth (BS) / जन्म मिति ( वि . सं ) <span class="text-danger"> * </span></label>
+				<input type="date" class="form-control" name="applicant_dob_BS" id="applicant_dob_BS" placeholder="2032-04-18" required>
+			</div>
+
+		  	<div class=" col-md-4">
+				<label for="applicant_dob_AD" class="form-label">Date Of Birth (AD) / जन्म मिति ( इस्वी सम्बतमा ) <span class="text-danger"> * </span></label>
+				<input type="date" class="form-control" name="applicant_dob_AD" id="applicant_dob_AD" placeholder="1994-02-23" required>
+			</div>
+
+		  	<div class=" col-md-4">
+				<label for="applicant_age" class="form-label">Age / उमेर  <span class="text-danger"> * </span></label>
+				<input type="number" class="form-control" name="applicant_age" id="applicant_age" placeholder="43" required>
+			</div>
+
+			<div class=" col-md-4">
+				<label for="applicant_gender" class="form-label">Gender / लिंग <span class="text-danger"> * </span></label>
+				<select id="applicant_gender" name="applicant_gender" class="form-select" required>
+			      <option value="male" selected>Male/पुरुष </option>
+			      <option value="female">Female/महिला </option>
+			  	</select>
+			</div>
+
+			<div class=" col-md-4">
+				<label for="applicant_marital_status" class="form-label">Marital Status / वैवाहिक स्थिति <span class="text-danger"> * </span></label>
+				<select id="applicant_marital_status" name="applicant_marital_status" class="form-select" required>
+			      <option value="unmarried" selected>Unmarried/अविवाहित</option>
+			      <option value="married">Married/विवाहित</option>
+			  	</select>
+			</div>
+
+			<div class=" col-md-4">
+				<label for="applicant_nationality" class="form-label">Nationality / राष्ट्रीयता  <span class="text-danger"> * </span></label>
+				<select id="applicant_nationality" name="applicant_nationality" class="form-select" required>
+			      <option value="nepal" selected>Nepal</option>
+			      <option value="other">Other</option>
+			  	</select>
+			</div>
+
+			<div class="col-md-4">
+				<label for="applicant_pan_number" class="form-label">PAN Number</label>
+				<input type="text" class="form-control" name="applicant_pan_number" id="applicant_pan_number">
+			</div>
+
+
+			<div class="row gy-4 gx-5 applicant-reference-document-details">
+				<div class="col-md-6 form-label">Select Reference Document: </div>
+				<div class="form-check col-sm-6 col-md-3">
+				  <input class="form-check-input" type="radio" name="applicant_reference_document_detail_type" id="applicant_reference_document_detail_citizenship" value="citizenship" checked>
+				  <label class="form-check-label" for="applicant_reference_document_detail_citizenship">
+				    Citizenship/नागरिकता
+				  </label>
+				</div>
+				<div class="form-check col-sm-6 col-md-3">
+				  <input class="form-check-input" type="radio" name="applicant_reference_document_detail_type" id="applicant_reference_document_detail_passport" value="passport">
+				  <label class="form-check-label" for="applicant_reference_document_detail_passport">
+				    Passport/पासपोर्ट 
+				  </label>
+				</div>	
+				
+			</div>
+			
+
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Correspondance Address / पत्राचार गर्ने ठेगाना</div>
+
+			<div class="col-md-4">
+			    <label for="applicant_correspondance_address_country" class="form-label">Country / देश <span class="text-danger"> *</span> </label>
+			    <select id="applicant_correspondance_address_country" name="applicant_correspondance_address_country" class="form-select" required>
+			      <option value="Nepal" selected>Nepal</option>
+			      <option value="">India</option>
+			  	</select>
+			</div>
+
+			<div class="col-md-4">
+			    <label for="applicant_correspondance_address_district" class="form-label">District / जिल्ला <span class="text-danger"> *</span> </label>
+			    <select id="applicant_correspondance_address_district" name="applicant_correspondance_address_district" class="form-select" required>
+			      <option value="">Select</option>
+			      <option value="kailali">Kailali</option>
+			      <option value="kanchanpur">Kailali</option>
+
+			  	</select>
+			</div>
+
+			<div class="col-md-4">
+			    <label for="applicant_correspondance_address_zone" class="form-label">Zone / अञ्चल <span class="text-danger"> *</span> </label>
+			    <select id="applicant_correspondance_address_zone" name="applicant_correspondance_address_zone" class="form-select" required>
+			      <option value="">Select</option>
+			      <option value="seti">Seti</option>
+			  	</select>
+			</div>
+
+
+		  	<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_vdc">VDC or Municipality / गाविस वा नगरपालिका<span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_correspondance_address_vdc" id="applicant_correspondance_address_vdc" placeholder="Dhangadhi" required>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_tole">Tole / टोल <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_correspondance_address_tole" id="applicant_correspondance_address_tole" placeholder="Om Shanti Tole" value="" required>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_ward">Ward Number / वडा नम्बर<span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_correspondance_address_ward" id="applicant_correspondance_address_ward" placeholder="04" required>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_block">Block Number / ब्लोक नम्बर </label>
+				<input type="text" class="form-control" name="applicant_correspondance_address_block" id="applicant_correspondance_address_block" placeholder="12" >	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_phone">Phone Number / फोन नम्बर </label>
+				<input type="text" class="form-control" name="applicant_correspondance_address_phone" id="applicant_correspondance_address_phone" placeholder="091525555" >	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_mobile">Mobile Number / मोबाईल नम्बर <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_correspondance_address_mobile" id="applicant_correspondance_address_mobile" placeholder="04" required>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_correspondance_address_email">Email / ईमेल <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_correspondance_address_email" id="applicant_correspondance_address_email" placeholder="abc@gmail.com" required>	
+			</div>
+		</div>
+
+		<div class="section row gy-4 gx-5 permanenet-address-details">
+			<div class="head col-md-12">Permanent Address (Write Address Same As Citizenship) / स्थाई ठेगाना (ठेगाना नागरिकता अनुसार लेख्नुहोस )</div>
+
+			<div class="col-md-12">
+				<input class="form-check-input" type="checkbox" value="" name="permanent-address-checkbox" id="permanent-address-checkbox">
+				<label class="form-check-label" for="permanent-address-checkbox">
+				    Same as Correspondence Address / पत्राचार ठेगाना जस्तै 
+				</label>
+
+			</div>	
+			<div class="col-md-4">
+			    <label for="applicant_permanent_address_country" class="form-label">Country / देश <span class="text-danger"> *</span> </label>
+			    <select id="applicant_permanent_address_country" name="applicant_permanent_address_country" class="form-select" required>
+			      <option value="Nepal" selected>Nepal</option>
+			      <option value="">India</option>
+			  	</select>
+			</div>
+
+			<div class="col-md-4">
+			    <label for="applicant_permanent_address_district" class="form-label">District / जिल्ला <span class="text-danger"> *</span> </label>
+			    <select id="applicant_permanent_address_district" name="applicant_permanent_address_district" class="form-select" required>
+			      <option value="" selected>Select</option>
+			      <option value="kailali">Kailali</option>
+			  	</select>
+			</div>
+
+			<div class="col-md-4">
+			    <label for="applicant_permanent_address_zone" class="form-label">Zone / अञ्चल <span class="text-danger"> *</span> </label>
+			    <select id="applicant_permanent_address_zone" name="applicant_permanent_address_zone" class="form-select" required>
+			      <option value="" selected>Select</option>
+			      <option value="seti">Seti</option>
+			  	</select>
+			</div>
+
+
+		  	<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_vdc">VDC or Municipality / गाविस वा नगरपालिका <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_permanent_address_vdc" id="applicant_permanent_address_vdc" placeholder="Dhamgadhi" required>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for=applicant_permanent_address_tole">Tole / टोल <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_permanent_address_tole" id="applicant_permanent_address_tole" placeholder="Om Shanti Tole" required>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_ward">Ward Number / वडा नम्बर<span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_permanent_address_ward" id="applicant_permanent_address_ward" placeholder="04" required>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_block">Block Number / ब्लोक नम्बर </label>
+				<input type="text" class="form-control" name="applicant_permanent_address_block" id="applicant_permanent_address_block" placeholder="12" >	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_phone">Phone Number / फोन नम्बर </label>
+				<input type="text" class="form-control" name="applicant_permanent_address_phone" id="applicant_permanent_address_phone" placeholder="091525555" >	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="permanent-address-mobile">Mobile Number / मोबाईल नम्बर <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="permanent-address-mobile" id="applicant_permanent_address_mobile" placeholder="04" required>	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_email">Email / ईमेल <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_permanent_address_email" id="applicant_permanent_address_email" placeholder="abc@gmail.com" >	
+			</div>
+
+			<div class="col-md-4">
+				<label class="form-label" for="applicant_permanent_address_landmark">Nearest Landmark / नजिकको ल्याण्डमार्क<span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="applicant_permanent_address_landmark" id="applicant_permanent_address_landmark" placeholder="Seti Zonal Hospital">	
+			</div>
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Details Of Family Members / परिवारका सदस्यहरूको विवरण</div>
+			<div class="col-md-4">
+				<label class="form-label" for="grandfather_name">Grand Father's Name / हजुरबुबाको नाम <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="grandfather_name" id="grandfather_name" placeholder="Shyam Bahadur Thapa" required>	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="father_name">Father's Name / बुवाको नाम <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="father_name" id="father_name" placeholder="Ravi Bahadur Thapa" required>	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="mother_name">Mother's Name / आमाको नाम<span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="mother_name" id="mother_name" placeholder="Sabitri Thapa" required>	
+			</div>
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Details Of Occupation / पेशाको विवरण</div>
+			<div class="col-md-4">
+			    <label class="form-label" for="occupation_type" >Occupation Type / व्यवसायको प्रकार <span class="text-danger"> *</span> </label>
+			    <select id="Occupation_type" name="occupation_type" class="form-select" required>
+			      <option value="agriculture" selected>Agriculture</option>
+			      <option value="">Select</option>
+			      <option value="army">Army</option>
+			  	</select>
+			</div>
+			<div class="col-md-4">
+			    <label class="form-label" for="type_of_business" >Type Of Business / व्यापारको प्रकार <span class="text-danger"> *</span> </label>
+			    <select id="Type_of_business" name="type_of_business" class="form-select" required >
+			    	<option value="">Select</option>
+			      <option value="manufacturing">Manufacturing</option>
+			      <option value="service">Service</option>
+			  	</select>
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="organization_name">Organization Name / संस्थाको नाम <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="organization_name" id="organization_name" placeholder="Nepal Rastra Bank" required >	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="organization_address">Organization Address / संस्थाको ठेगाना  <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="organization_address" id="organization_address" placeholder="Dhangadhi, Kailali" required >	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="designation">Designation / पद <span class="text-danger"> * </span></label>
+				<input type="text" class="form-control" name="designation" id="designation" placeholder="Manager" required >	
+			</div>
+			<div class="col-md-4">
+			    <label class="form-label" for="annual_income" >Annual Income / बार्शिक आम्दानी <span class="text-danger"> *</span> </label>
+			    <select id="annual_income" name="annual_income" class="form-select" required>
+			      <option value="100000" selected>Up to Rs 1,00,000</option>
+			      <option value="500000">Above Rs 5,00,000</option>
+			  	</select>
+			</div>
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Upload Documents / कागजात अप्लोड गर्नुहोस् </div>
+			<div class="row gy-4 gx-5">
+				<div class="col-md-6">
+					<label class="form-label" for="applicant_location_map">Location Map of Applicant Residence / आवेदकको घरको स्थानीय नक्शा<span class="text-danger"> *</span> </label>
+					<input type="file" accept=".png, .jpeg, .jpg" name="applicant_location_map" class="form-control" id="applicant_location_map" required >
+				</div>
+
+				<div class="col-md-6">
+					<label class="form-label" for="applicant_signature">Applicant's Signature / आवेदक हस्ताक्षर <span class="text-danger"> *</span> </label>
+					<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="applicant_signature" id="applicant_signature" required >
+				</div>
+
+				<div class="col-md-6">
+					<label class="form-label" for="applicant_thumb_print">Applicant's Thumb Print / आवेदकको ल्याप्चे<span class="text-danger"> *</span> </label>
+					<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="applicant_thumb_print" id="applicant_thumb_print" required >
+				</div>
+
+				<div class="col-md-6">
+					<label class="form-label" for="applicant_with_id">Applicant's Photo With Identity Document / आवेदकको पहिचान पत्रसहितको फोटो<span class="text-danger"> *</span> </label>
+					<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="applicant_with_id" id="applicant_with_id" required >
+				</div>
+
+				<div class="col-sm-12 sample-applicant-with-id">
+					<p>Sample image of applicant holding identity document (आवेदकको पहिचान पत्रसहितको फोटोको नमुना )</p>
+					<img src="sample_applicant_with_id.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="row gy-4 gx-5 applicant-reference-document-upload">
+				<div class="col-sm-3 form-label">Select Reference Document (पहिचान पत्र): </div>
+				<div class="form-check col-sm-3">
+				  <input class="form-check-input" type="radio" name="applicant_reference_document_upload_type" id="applicant_reference_document_upload_citizenship" value="citizenship" checked >
+				  <label class="form-check-label" for="applicant_reference_document_upload_citizenship">
+				    Citizenship/नागरिकता
+				  </label>
+				</div>
+				<div class="form-check col-sm-3">
+				  <input class="form-check-input" type="radio" name="applicant_reference_document_upload_type" id="applicant_reference_document_upload_passport" value="passport" >
+				  <label class="form-check-label" for="applicant_reference_document_upload_passport">
+				    Passport/पासपोर्ट
+				  </label>
+				</div>
+			</div>	
+
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col- md-12">Nominee Details</div>
+
+			<div class="row gy-4 gx-5 nominee-details">
+				<div class="col-sm-3 form-label">I have Nominee </div>
+				<div class="form-check col-sm-3">
+				  <input class="form-check-input" type="radio" name="select_nominee" id="select-nominee-true" value=true >
+				  <label class="form-check-label" for="select-nominee-true">
+				    Yes
+				  </label>
+				</div>
+				<div class="form-check col-sm-3">
+				  <input class="form-check-input" type="radio" name="select_nominee" id="select-nominee-false" value=false checked >
+				  <label class="form-check-label" for="select-nominee-false">
+				    No
+				  </label>
+				</div>
+			</div>		
+
+		</div>
+
+		<div class="section row gy-4 gx-5">
+			<div class="head col-md-12">Transaction Details</div>
+			<div class="col-md-4">
+				<label class="form-label" for="membership_fee">Membership Fee (Rs)</label>
+				<input type="text" class="form-control" name="membership_fee" id="membership_fee" value="500" disabled >	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="unit_share_price">Unit Share Price (Rs)</label>
+				<input type="text" class="form-control" name="unit_share_price" id="unit_share_price" value="100" disabled >	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="applied_share_units">Applied Share Quantity (Units)<span class="text-danger"> * </span></label>
+				<input type="number" class="form-control" name="applied_share_units" id="applied_share_units" placeholder="100" required>	
+			</div>
+			<div class="col-md-4">
+				<label class="form-label" for="total_amount">Total Amount Paid<span class="text-danger"> * </span></label>
+				<input type="number" class="form-control" name="total_amount" id="total_amount" placeholder="10500" required >	
+			</div>
+
+			<div class="col-md-8">
+				<label class="form-label" for="transaction_receipt_photo">Transaction Receipt Photo<span class="text-danger"> *</span> </label>
+				<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="transaction_receipt_photo" id="transaction_receipt_photo" required >
+			</div>
+		</div>
+
+		<div class="row gy-4 gx-5">
+			<button class="col-md-4 offset-md-4 btn btn-success" type="submit">Submit</button>
+		</div>
+
+	</form>
+</div>
+
+<div class="message">
+	<div class="error alert-danger">Invalid Input GIven</div>
+</div>
+
+<div class="date-converter">
+	<iframe class="converter-frame" src="https://www.hamropatro.com/widgets/dateconverter.php" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" ></iframe>
+	<div class="icon">
+		<i class="bi bi-calendar3"></i>
+		<span>Date<br>Converter</span>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script>
+		
+	$( document ).ready(function() {
+
+		const passportDetailFields = `
+		<div class='row gy-4 gx-5 passport-details'>
+			<div class=' col-md-4'>
+				<label for='applicant_passport_number' class='form-label'>Passport Number <span class='text-danger'> * </span></label>
+				<input type='number' class='form-control' name='applicant_passport_number' id='applicant_passport_number' placeholder='2134' required>
+			</div>
+			<div class=' col-md-4'>
+			<label for='applicant_passport_expiry_date' class='form-label'>Passport Expiry Date (AD) <span class='text-danger'> * </span></label>
+			<input type='date' class='form-control' name='applicant_passport_expiry_date' id='applicant_passport_expiry_date' required>
+			</div>
+		</div>`
+		const citizenshipDetailFields = `
+		<div class="row gy-4 gx-5 citizenship-details">
+			<div class=" col-md-4">
+				<label for="applicant_citizenship_number" class="form-label">Citizenship Number / नागरिकता नम्बर <span class="text-danger"> * </span></label>
+				<input type="number" class="form-control" name="applicant_citizenship_number" id="applicant_citizenship_number" placeholder="2134" required>
+			</div>
+			<div class=" col-md-4">
+				<label for="applicant_citizenship_issue_district" class="form-label">Citizenship Issue District  <span class="text-danger"> * </span></label>
+				<select id="applicant_citizenship_issue_district" name="applicant_citizenship_issue_district" class="form-select" required ><option value="" selected>Select</option>
+					<option value="kailali">Kailali</option>
+					<option value="kanchanpur">Kanchanpur</option>
+				</select>
+			</div>
+			<div class=" col-md-4">
+				<label for="applicant_citizenship_issue_date_BS" class="form-label">Citizenship Issue Date (BS)  <span class="text-danger"> * </span></label>
+				<input type="date" class="form-control" name="applicant_citizenship_issue_date_BS" id="applicant_citizenship_issue_date_BS" required >
+			</div>
+			<div class=" col-md-4">
+				<label for="applicant_citizenship_issue_date_AD" class="form-label">Citizenship Issue Date (AD) <span class="text-danger"> * </span>
+				</label>
+				<input type="date" class="form-control" name="applicant_citizenship_issue_date_AD" id="applicant_citizenship_issue_date_AD" required>
+				</div>
+			</div>`
+		
+		const citizenshipUploadFields = `
+		<div class="row gy-4 gx-5 citizenship-upload">
+			<div class="col-md-6">
+				<label class="form-label" for="applicant_citizenship_front">Citizenship (Front) <span class="text-danger"> *</span> </label>
+				<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="applicant_citizenship_front" id="applicant_citizenship_front" required>
+			</div>
+			<div class="col-md-6"><label class="form-label" for="applicant_citizenship_back">Citizenship (Back) <span class="text-danger"> *</span> </label>
+			<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="applicant_citizenship_back" id="applicant_citizenship_back" required>
+			</div>
+		</div>`
+		const passportUploadFields = `
+		<div class="row gy-4 gx-5 passport-upload"><div class="col-md-6">
+			<label class="form-label" for="applicant_passport_photo">Passport<span class="text-danger"> *</span> </label>
+			<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="applicant_passport_photo" id="passport_photo" required>
+			</div>
+		</div>`
+
+
+		const nomineeDetailFields = `<div class="row gy-4 gx-5 nominee-detail-fields">
+										<div class="col-md-4">
+										    <label for="nominee_title" class="form-label">Title / शीर्षक <span class="text-danger"> *</span> </label>
+										    <select id="nominee_title" name="nominee_title" class="form-select" required>
+										      <option value="Mr." selected>Mr.</option>
+										      <option value="Mrs.">Mrs.</option>
+										      <option value="Miss">Miss</option>
+										      <option value="Minor">Minor</option>
+										  	</select>
+										</div>
+
+									  	<div class="col-md-4">
+											<label class="form-label" for="nominee_name">Nominee Name / नाम <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_name" id="nominee_name" placeholder="Ram" required>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_relation">Relationship / नाम <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_relation" id="nominee_relation" placeholder="Ram" required>	
+										</div>
+
+										<div class=" col-md-4">
+											<label for="nominee-reference-document_type" class="form-label">Reference Document Type / <span class="text-danger"> * </span></label>
+											<select id="nominee-reference-document_type" name="nominee_reference_document_type" class="form-select" required>
+										      <option value="" selected>Select</option>
+										      <option value="citizenship">Citizenship</option>
+										      <option value="passport">Passport</option>
+										      <option value="certificate">Birth Certificate</option>
+										  	</select>
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_reference_document_number">Citizenship / Passport / Birth Certificate (नागरिकता / पासपोर्ट / जन्म प्रमाणपत्र)<span class="text-danger"> * </span></label>
+											<input type="number" class="form-control" name="nominee_reference_document_number" id="nominee_reference_document_number" placeholder="098765" required>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_reference_document_issue_place">Place of Issue / जारी को स्थान <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_reference_document_issue_place" id="nominee_reference_document_issue_place" placeholder="Kailali, Nepal" required>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_reference_document_issue_date">Date of Issue  <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_reference_document_issue_date" id="nominee_reference_document_issue_date" placeholder="Kailali, Nepal" required>	
+										</div>
+										
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_age">Age <span class="text-danger"> * </span></label>
+											<input type="number" class="form-control" name="nominee_age" id="nominee_age" placeholder="18" required>	
+										</div>
+
+										<div class="col-md-4"></div>
+										<div class="col-md-4">
+										    <label for="nominee_address_country" class="form-label">Country / देश <span class="text-danger"> *</span> </label>
+										    <select id="nominee_address_country" name="nominee_address_country" class="form-select" required>
+										      <option value="Nepal" selected>Nepal</option>
+										      <option value="">India</option>
+										  	</select>
+										</div>
+
+										<div class="col-md-4">
+										    <label for="nominee_address_district" class="form-label">District / जिल्ला <span class="text-danger"> *</span> </label>
+										    <select id="nominee_address_district" name="nominee_address_district" class="form-select" required>
+										      <option value="" selected>Select</option>
+										      <option value="kailali">Kailali</option>
+										  	</select>
+										</div>
+
+										<div class="col-md-4">
+										    <label for="nominee_address_zone" class="form-label">Zone / अञ्चल <span class="text-danger"> *</span> </label>
+										    <select id="nominee_address_zone" name="nominee_address_zone" class="form-select" required>
+										      <option value="" selected>Select</option>
+										      <option value="seti">Seti</option>
+										  	</select>
+										</div>
+
+									  	<div class="col-md-4">
+											<label class="form-label" for="nominee_address_vdc">VDC or Municipality / गाविस वा नगरपालिका <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_address_vdc" id="nominee_address_vdc" placeholder="Dhangadhi" required>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_address_tole">Tole टोल <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_address_tole" id="nominee_address_tole" placeholder="Om Shanti Tole" required>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_address_ward">Ward Number / वडा नम्बर <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_address_ward" id="nominee_address_ward" placeholder="04" required>	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_address_block">Block Number / ब्लोक नम्बर</label>
+											<input type="text" class="form-control" name="nominee_address_block" id="nominee_address_block" placeholder="12" >	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_address_phone">Phone Number / फोन नम्बर </label>
+											<input type="text" class="form-control" name="nominee_address_phone" id="nominee_address_phone" placeholder="091525555" >	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_address_mobile">Mobile Number / मोबाईल नम्बर <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_address_mobile" id="nominee_address_mobile" placeholder="04" required >	
+										</div>
+
+										<div class="col-md-4">
+											<label class="form-label" for="nominee_address_email">Email / ईमेल <span class="text-danger"> * </span></label>
+											<input type="text" class="form-control" name="nominee_address_email" id="nominee_address_email" placeholder="abc@gmail.com" required >	
+										</div>
+
+										<div class="col-md-4"></div>
+
+										<div class="col-md-6">
+											<label class="form-label" for="nominee_signature">Nominee's Signature<span class="text-danger"> *</span> </label>
+											<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="nominee_signature" id="nominee_signature" required>
+										</div>
+
+										<div class="col-md-6">
+											<label class="form-label" for="nominee_thumb_print">Nominee's Thumb Print<span class="text-danger"> *</span> </label>
+											<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="nominee_thumb_print" id="nominee_thumb_print" required>
+										</div>
+
+										<div class="col-md-6">
+											<label class="form-label" for="nominee_photo">Nominee's Photo<span class="text-danger"> *</span> </label>
+											<input type="file" accept=".png, .jpeg, .jpg" class="form-control" id="nominee_reference-document-photo" required>
+										</div>
+
+										<div class="col-md-6">
+											<label class="form-label" for="nominee_reference_document_photo">Nominee's Reference Document Photo<span class="text-danger"> *</span> </label>
+											<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="nominee_reference_document_photo" id="nominee_reference_document_photo" required>
+										</div>
+									</div>	`
+
+
+		// Default Values to trigger dynamic form parts
+		$('form #applicant_reference_document_detail_citizenship')[0].checked=true
+		$('form #permanent-address-checkbox')[0].checked=false
+		$('form #applicant_reference_document_upload_citizenship')[0].checked=true
+		$('form #select-nominee-false')[0].checked=true
+
+
+		// Permanent Address 
+		$('form #permanent-address-checkbox').change(function (e){
+			if(e.currentTarget.checked){
+				$('#applicant_permanent_address_country')[0].value=$('#applicant_correspondance_address_country')[0].value
+				$('#applicant_permanent_address_district')[0].value=$('#applicant_correspondance_address_district')[0].value
+				$('#applicant_permanent_address_zone')[0].value=$('#applicant_correspondance_address_zone')[0].value
+				$('#applicant_permanent_address_vdc')[0].value=$('#applicant_correspondance_address_vdc')[0].value
+				$('#applicant_permanent_address_tole')[0].value=$('#applicant_correspondance_address_tole')[0].value
+				$('#applicant_permanent_address_ward')[0].value=$('#applicant_correspondance_address_ward')[0].value
+				$('#applicant_permanent_address_block')[0].value=$('#applicant_correspondance_address_block')[0].value
+				$('#applicant_permanent_address_phone')[0].value=$('#applicant_correspondance_address_phone')[0].value
+				$('#applicant_permanent_address_mobile')[0].value=$('#applicant_correspondance_address_mobile')[0].value
+				$('#applicant_permanent_address_email')[0].value=$('#applicant_correspondance_address_email')[0].value
+			}
+		})
+
+
+		// Reference Document Fields
+		// Trigger Default
+		$('.applicant-reference-document-details').append(citizenshipDetailFields)
+
+		// Trigger On Change 
+		$('[name = "applicant_reference_document_detail_type"]').change(function(e) {
+			const selected = e.currentTarget.value
+			if(selected==="passport"){
+				$('.applicant-reference-document-details').append(passportDetailFields)
+				$('.citizenship-details').remove()
+
+			} else{
+				$('.applicant-reference-document-details').append(citizenshipDetailFields)
+				$('.passport-details').remove()
+			}
+		})
+
+		// Reference Document Upload Fields
+		// Trigger Default
+		$('.applicant-reference-document-upload').append(citizenshipUploadFields)
+
+		// Trigger On Change 
+		$('[name = "applicant_reference_document_upload_type"]').change(function(e) {
+			const selected = e.currentTarget.value
+			if(selected==="passport"){
+				$('.applicant-reference-document-upload').append(passportUploadFields)
+				$('.citizenship-upload').remove()
+
+			} else{
+				$('.applicant-reference-document-upload').append(citizenshipUploadFields)
+				$('.passport-upload').remove()
+			}
+		})
+
+		// Select Nominee Detail Fields
+		// Trigger Default
+
+		// Trigger On Change 
+		$('[name = "select_nominee"]').change(function(e) {
+			const selected = e.currentTarget.value
+			if(selected==="true"){
+				$('.nominee-details').append(nomineeDetailFields)
+			} else{
+				$('.nominee-detail-fields').remove()
+			}
+		})
+
+
+		// Submit Form
+		$('form').submit(function (e){
+			e.preventDefault();
+			let formData = new FormData($('form')[0]);
+			let dataJson = {}
+			for (let pair of formData.entries()) {
+			  // console.log(pair[0] + " - " + pair[1]);
+			  dataJson[pair[0]] = pair[1]
+			}
+			console.log(dataJson)
+			const url = 'http://sahakaristore.lightwebgroup.com/customer/add.php'
+			console.log('fetch')
+		  	fetch(url, {
+			    method: 'POST',
+			    body: formData,
+			    contentType: 'multipart/form-data'
+		  	}).then(response => response.json()).then(data => { console.log(data); })
+		})
+
+		//  Validations
+
+		$('input[type="file"').change(function (e){
+            var fileExtension = ['jpeg', 'jpg', 'png'];
+            if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                alert("Only photos are allowed (jpeg/png/jpg)");
+            	$(this).value = ""
+            }
+ 		}) 
+
+
+
+		$('.date-converter .icon').click(function(){
+			$('.date-converter .converter-frame').toggle()
+			// console.log($( ".date-converter i" ).hasClass("bi-calendar3"))
+
+			if($( ".date-converter i" ).hasClass( "bi-calendar3")){
+				$( ".date-converter i" ).addClass( "bi-x-circle");
+				$( ".date-converter i" ).removeClass( "bi-calendar3");
+			}
+			else {
+				$( ".date-converter i" ).removeClass( "bi-x-circle");
+				$( ".date-converter i" ).addClass( "bi-calendar3");
+			}		
+		})
+
+	});
+
+
+</script>
+
+</body>
+</html>
