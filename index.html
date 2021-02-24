@@ -119,6 +119,33 @@
 		padding: 6px 12px;
 		border-radius: 12px
 	}
+	.loader{
+		position: fixed;
+		top:50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		display: none;
+		border-radius: 12px;
+	}
+	.loader>div{
+		width: 400px;
+		height: 400px;
+		background: var(--bs-green);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+	}
+	svg {
+	  width: 100px;
+	  height: 100px;
+	  margin: 20px;
+	  display: inline-bloc;
+	}
+	select{
+		text-transform: capitalize;
+	}
 </style>
 <body>
 
@@ -212,17 +239,17 @@
 			</div>
 
 			<div class="row gy-4 gx-5 applicant-reference-document-details">
-				<div class="col-md-6 form-label">Select Reference Document: </div>
+				<div class="col-md-6 form-label">Select Reference Document (पहिचान पत्र छान्नुहोस ): </div>
 				<div class="form-check col-sm-6 col-md-3">
 				  <input class="form-check-input" type="radio" name="reference_document_detail_type" id="applicant_reference_document_detail_citizenship" value="citizenship" checked>
 				  <label class="form-check-label" for="applicant_reference_document_detail_citizenship">
-				    Citizenship/नागरिकता
+				    Citizenship / नागरिकता
 				  </label>
 				</div>
 				<div class="form-check col-sm-6 col-md-3">
 				  <input class="form-check-input" type="radio" name="reference_document_detail_type" id="applicant_reference_document_detail_passport" value="passport">
 				  <label class="form-check-label" for="applicant_reference_document_detail_passport">
-				    Passport/पासपोर्ट 
+				    Passport / पासपोर्ट 
 				  </label>
 				</div>	
 				
@@ -237,26 +264,111 @@
 			<div class="col-md-4">
 			    <label for="applicant_correspondance_address_country" class="form-label">Country / देश <span class="text-danger"> *</span> </label>
 			    <select id="applicant_correspondance_address_country" name="temp_country" class="form-select" replaceLater>
-			      <option value="Nepal" selected>Nepal</option>
-			      <option value="">India</option>
+			      <option value="nepal" selected>Nepal</option>
+			      <option value="Other">Other</option>
 			  	</select>
 			</div>
 
 			<div class="col-md-4">
 			    <label for="applicant_correspondance_address_district" class="form-label">District / जिल्ला <span class="text-danger"> *</span> </label>
 			    <select id="applicant_correspondance_address_district" name="temp_district" class="form-select" replaceLater>
-			      <option value="">Select</option>
-			      <option value="kailali">Kailali</option>
-			      <option value="kanchanpur">Kailali</option>
-
+			    	<option value="">--Select District--</option>
+			    	<option value="achham">achham</option> 
+					<option value="arghakhanchi">arghakhanchi</option> 
+					<option value="baglung">baglung</option> 
+					<option value="baitadi">baitadi</option> 
+					<option value="bajhang">bajhang</option> 
+					<option value="bajura">bajura</option> 
+					<option value="banke">banke</option> 
+					<option value="bara">bara</option> 
+					<option value="bardiya">bardiya</option> 
+					<option value="bhaktapur">bhaktapur</option> 
+					<option value="bhojpur">bhojpur</option> 
+					<option value="chitwan">chitwan</option> 
+					<option value="dadeldhura">dadeldhura</option> 
+					<option value="dailekh">dailekh</option> 
+					<option value="dang deukhuri">dang deukhuri</option> 
+					<option value="darchula">darchula</option> 
+					<option value="dhading">dhading</option> 
+					<option value="dhankuta">dhankuta</option> 
+					<option value="dhanusa">dhanusa</option> 
+					<option value="dholkha">dholkha</option> 
+					<option value="dolpa">dolpa</option> 
+					<option value="doti">doti</option> 
+					<option value="gorkha">gorkha</option> 
+					<option value="gulmi">gulmi</option> 
+					<option value="humla">humla</option> 
+					<option value="ilam">ilam</option> 
+					<option value="jajarkot">jajarkot</option> 
+					<option value="jhapa">jhapa</option> 
+					<option value="jumla">jumla</option> 
+					<option value="kailali">kailali</option> 
+					<option value="kalikot">kalikot</option> 
+					<option value="kanchanpur">kanchanpur</option> 
+					<option value="kapilvastu">kapilvastu</option> 
+					<option value="kaski">kaski</option> 
+					<option value="kathmandu">kathmandu</option> 
+					<option value="kavrepalanchok">kavrepalanchok</option> 
+					<option value="khotang">khotang</option> 
+					<option value="lalitpur">lalitpur</option> 
+					<option value="lamjung">lamjung</option> 
+					<option value="mahottari">mahottari</option> 
+					<option value="makwanpur">makwanpur</option> 
+					<option value="manang">manang</option> 
+					<option value="morang">morang</option> 
+					<option value="mugu">mugu</option> 
+					<option value="mustang">mustang</option> 
+					<option value="myagdi">myagdi</option> 
+					<option value="nawalparasi">nawalparasi</option> 
+					<option value="nuwakot">nuwakot</option> 
+					<option value="okhaldhunga">okhaldhunga</option> 
+					<option value="palpa">palpa</option> 
+					<option value="panchthar">panchthar</option> 
+					<option value="parbat">parbat</option> 
+					<option value="parsa">parsa</option> 
+					<option value="pyuthan">pyuthan</option> 
+					<option value="ramechhap">ramechhap</option> 
+					<option value="rasuwa">rasuwa</option> 
+					<option value="rautahat">rautahat</option> 
+					<option value="rolpa">rolpa</option> 
+					<option value="rukum">rukum</option> 
+					<option value="rupandehi">rupandehi</option> 
+					<option value="salyan">salyan</option> 
+					<option value="sankhuwasabha">sankhuwasabha</option> 
+					<option value="saptari">saptari</option> 
+					<option value="sarlahi">sarlahi</option> 
+					<option value="sindhuli">sindhuli</option> 
+					<option value="sindhupalchok">sindhupalchok</option> 
+					<option value="siraha">siraha</option> 
+					<option value="solukhumbu">solukhumbu</option> 
+					<option value="sunsari">sunsari</option> 
+					<option value="surkhet">surkhet</option> 
+					<option value="syangja">syangja</option> 
+					<option value="tanahu">tanahu</option> 
+					<option value="taplejung">taplejung</option> 
+					<option value="terhathum">terhathum</option> 
+					<option value="udayapur">udayapur</option>
 			  	</select>
 			</div>
 
 			<div class="col-md-4">
 			    <label for="applicant_correspondance_address_zone" class="form-label">Zone / अञ्चल <span class="text-danger"> *</span> </label>
 			    <select id="applicant_correspondance_address_zone" name="temp_zone" class="form-select" replaceLater>
-			      <option value="">Select</option>
-			      <option value="seti">Seti</option>
+			      	<option value="">--Select Zone--</option>
+	                <option value="Bagmati">Bagmati</option>
+	                <option value="Bheri">Bheri</option>
+	                <option value="Dhawalagiri">Dhawalagiri</option>
+	                <option value="Gandaki">Gandaki</option>
+	                <option value="Janakpur">Janakpur</option>
+	                <option value="Karnali">Karnali</option>
+	                <option value="Kosi">Kosi</option>
+	                <option value="Lumbini">Lumbini</option>
+	                <option value="Mahakali">Mahakali</option>
+	                <option value="Mechi">Mechi</option>
+	                <option value="Narayani">Narayani</option>
+	                <option value="Rapti">Rapti</option>
+	                <option value="Sagarmatha">Sagarmatha</option>
+	                <option value="Seti">Seti</option>
 			  	</select>
 			</div>
 
@@ -310,24 +422,111 @@
 			<div class="col-md-4">
 			    <label for="applicant_permanent_address_country" class="form-label">Country / देश <span class="text-danger"> *</span> </label>
 			    <select id="applicant_permanent_address_country" name="perm_country" class="form-select" replaceLater>
-			      <option value="Nepal" selected>Nepal</option>
-			      <option value="">India</option>
+			      <option value="nepal" selected>Nepal</option>
+			      <option value="other">Other</option>
 			  	</select>
 			</div>
 
 			<div class="col-md-4">
 			    <label for="applicant_permanent_address_district" class="form-label">District / जिल्ला <span class="text-danger"> *</span> </label>
 			    <select id="applicant_permanent_address_district" name="perm_district" class="form-select" replaceLater>
-			      <option value="" selected>Select</option>
-			      <option value="kailali">Kailali</option>
+			      	<option value="">--Select District--</option>
+			    	<option value="achham">achham</option> 
+					<option value="arghakhanchi">arghakhanchi</option> 
+					<option value="baglung">baglung</option> 
+					<option value="baitadi">baitadi</option> 
+					<option value="bajhang">bajhang</option> 
+					<option value="bajura">bajura</option> 
+					<option value="banke">banke</option> 
+					<option value="bara">bara</option> 
+					<option value="bardiya">bardiya</option> 
+					<option value="bhaktapur">bhaktapur</option> 
+					<option value="bhojpur">bhojpur</option> 
+					<option value="chitwan">chitwan</option> 
+					<option value="dadeldhura">dadeldhura</option> 
+					<option value="dailekh">dailekh</option> 
+					<option value="dang deukhuri">dang deukhuri</option> 
+					<option value="darchula">darchula</option> 
+					<option value="dhading">dhading</option> 
+					<option value="dhankuta">dhankuta</option> 
+					<option value="dhanusa">dhanusa</option> 
+					<option value="dholkha">dholkha</option> 
+					<option value="dolpa">dolpa</option> 
+					<option value="doti">doti</option> 
+					<option value="gorkha">gorkha</option> 
+					<option value="gulmi">gulmi</option> 
+					<option value="humla">humla</option> 
+					<option value="ilam">ilam</option> 
+					<option value="jajarkot">jajarkot</option> 
+					<option value="jhapa">jhapa</option> 
+					<option value="jumla">jumla</option> 
+					<option value="kailali">kailali</option> 
+					<option value="kalikot">kalikot</option> 
+					<option value="kanchanpur">kanchanpur</option> 
+					<option value="kapilvastu">kapilvastu</option> 
+					<option value="kaski">kaski</option> 
+					<option value="kathmandu">kathmandu</option> 
+					<option value="kavrepalanchok">kavrepalanchok</option> 
+					<option value="khotang">khotang</option> 
+					<option value="lalitpur">lalitpur</option> 
+					<option value="lamjung">lamjung</option> 
+					<option value="mahottari">mahottari</option> 
+					<option value="makwanpur">makwanpur</option> 
+					<option value="manang">manang</option> 
+					<option value="morang">morang</option> 
+					<option value="mugu">mugu</option> 
+					<option value="mustang">mustang</option> 
+					<option value="myagdi">myagdi</option> 
+					<option value="nawalparasi">nawalparasi</option> 
+					<option value="nuwakot">nuwakot</option> 
+					<option value="okhaldhunga">okhaldhunga</option> 
+					<option value="palpa">palpa</option> 
+					<option value="panchthar">panchthar</option> 
+					<option value="parbat">parbat</option> 
+					<option value="parsa">parsa</option> 
+					<option value="pyuthan">pyuthan</option> 
+					<option value="ramechhap">ramechhap</option> 
+					<option value="rasuwa">rasuwa</option> 
+					<option value="rautahat">rautahat</option> 
+					<option value="rolpa">rolpa</option> 
+					<option value="rukum">rukum</option> 
+					<option value="rupandehi">rupandehi</option> 
+					<option value="salyan">salyan</option> 
+					<option value="sankhuwasabha">sankhuwasabha</option> 
+					<option value="saptari">saptari</option> 
+					<option value="sarlahi">sarlahi</option> 
+					<option value="sindhuli">sindhuli</option> 
+					<option value="sindhupalchok">sindhupalchok</option> 
+					<option value="siraha">siraha</option> 
+					<option value="solukhumbu">solukhumbu</option> 
+					<option value="sunsari">sunsari</option> 
+					<option value="surkhet">surkhet</option> 
+					<option value="syangja">syangja</option> 
+					<option value="tanahu">tanahu</option> 
+					<option value="taplejung">taplejung</option> 
+					<option value="terhathum">terhathum</option> 
+					<option value="udayapur">udayapur</option>
 			  	</select>
 			</div>
 
 			<div class="col-md-4">
 			    <label for="applicant_permanent_address_zone" class="form-label">Zone / अञ्चल <span class="text-danger"> *</span> </label>
 			    <select id="applicant_permanent_address_zone" name="perm_zone" class="form-select" replaceLater>
-			      <option value="" selected>Select</option>
-			      <option value="seti">Seti</option>
+			    	<option value="">--Select Zone--</option>
+	                <option value="Bagmati">Bagmati</option>
+	                <option value="Bheri">Bheri</option>
+	                <option value="Dhawalagiri">Dhawalagiri</option>
+	                <option value="Gandaki">Gandaki</option>
+	                <option value="Janakpur">Janakpur</option>
+	                <option value="Karnali">Karnali</option>
+	                <option value="Kosi">Kosi</option>
+	                <option value="Lumbini">Lumbini</option>
+	                <option value="Mahakali">Mahakali</option>
+	                <option value="Mechi">Mechi</option>
+	                <option value="Narayani">Narayani</option>
+	                <option value="Rapti">Rapti</option>
+	                <option value="Sagarmatha">Sagarmatha</option>
+	                <option value="Seti">Seti</option>
 			  	</select>
 			</div>
 
@@ -393,19 +592,11 @@
 			<div class="head col-md-12">Details Of Occupation / पेशाको विवरण</div>
 			<div class="col-md-4">
 			    <label class="form-label" for="occupation_type" >Occupation Type / व्यवसायको प्रकार <span class="text-danger"> *</span> </label>
-			    <select id="Occupation_type" name="occupation_type" class="form-select" replaceLater>
-			      <option value="agriculture" selected>Agriculture</option>
-			      <option value="">Select</option>
-			      <option value="army">Army</option>
-			  	</select>
+			    <input type="text" id="occupation_type" name="occupation_type" class="form-control" placeholder="Farmer" replaceLater>
 			</div>
 			<div class="col-md-4">
 			    <label class="form-label" for="type_of_business" >Type Of Business / व्यापारको प्रकार <span class="text-danger"> *</span> </label>
-			    <select id="Type_of_business" name="type_of_business" class="form-select" replaceLater >
-			    	<option value="">Select</option>
-			      <option value="manufacturing">Manufacturing</option>
-			      <option value="service">Service</option>
-			  	</select>
+			    <input type="text" id="type_of_business" name="type_of_business" class="form-control" placeholder="Agriculture" replaceLater >
 			</div>
 			<div class="col-md-4">
 				<label class="form-label" for="organization_name">Organization Name / संस्थाको नाम <span class="text-danger"> * </span></label>
@@ -422,8 +613,12 @@
 			<div class="col-md-4">
 			    <label class="form-label" for="annual_income" >Annual Income / बार्शिक आम्दानी <span class="text-danger"> *</span> </label>
 			    <select id="annual_income" name="annual_income" class="form-select" replaceLater>
-			      <option value="100000" selected>Up to Rs 1,00,000</option>
-			      <option value="500000">Above Rs 5,00,000</option>
+			      <option value="<100000" selected>Up to Rs 1,00,000</option>
+			      <option value="<500000" selected>Up to Rs 5,00,000</option>
+			      <option value="<1000000" selected>Up to Rs 10,00,000</option>
+			      <option value="<2000000" selected>Up to Rs 20,00,000</option>
+			      <option value="<5000000" selected>Up to Rs 50,00,000</option>
+			      <option value=">5000000">Above Rs 50,00,000</option>
 			  	</select>
 			</div>
 		</div>
@@ -452,23 +647,23 @@
 				</div>
 
 				<div class="col-sm-12 sample-applicant-with-id">
-					<p>Sample image of applicant holding identity document (आवेदकको पहिचान पत्रसहितको फोटोको नमुना )</p>
+					<p>Sample image of applicant holding identity document (आवेदकको पहिचान पत्रसहितको फोटो नमुना )</p>
 					<img src="sample_applicant_with_id.jpg" alt="">
 				</div>
 			</div>
 
 			<div class="row gy-4 gx-5 applicant-reference-document-upload">
-				<div class="col-sm-3 form-label">Select Reference Document (पहिचान पत्र): </div>
+				<div class="col-sm-3 form-label">Select Reference Document (पहिचान पत्र छान्नुहोस ): </div>
 				<div class="form-check col-sm-3">
 				  <input class="form-check-input" type="radio" name="reference_document_upload_type" id="applicant_reference_document_upload_citizenship" value="citizenship" checked >
 				  <label class="form-check-label" for="applicant_reference_document_upload_citizenship">
-				    Citizenship/नागरिकता
+				    Citizenship / नागरिकता 
 				  </label>
 				</div>
 				<div class="form-check col-sm-3">
 				  <input class="form-check-input" type="radio" name="reference_document_upload_type" id="applicant_reference_document_upload_passport" value="passport" >
 				  <label class="form-check-label" for="applicant_reference_document_upload_passport">
-				    Passport/पासपोर्ट
+				    Passport / पासपोर्ट
 				  </label>
 				</div>
 			</div>	
@@ -476,20 +671,20 @@
 		</div>
 
 		<div class="section row gy-4 gx-5">
-			<div class="head col- md-12">Nominee Details</div>
+			<div class="head col- md-12">Nominee Details / उम्मेदवारको विवरण</div>
 
 			<div class="row gy-4 gx-5 nominee-details">
-				<div class="col-sm-3 form-label">I have Nominee </div>
+				<div class="col-sm-3 form-label">I have Nominee (मेरो  उम्मेदवार)</div>
 				<div class="form-check col-sm-3">
 				  <input class="form-check-input" type="radio" name="select_nominee" id="select-nominee-true" value=true >
 				  <label class="form-check-label" for="select-nominee-true">
-				    Yes
+				    Yes (छैन)
 				  </label>
 				</div>
 				<div class="form-check col-sm-3">
 				  <input class="form-check-input" type="radio" name="select_nominee" id="select-nominee-false" value=false checked >
 				  <label class="form-check-label" for="select-nominee-false">
-				    No
+				    No (छैन)
 				  </label>
 				</div>
 			</div>		
@@ -532,6 +727,34 @@
 	<div class="error alert-danger">Invalid Input GIven</div>
 </div>
 
+<div class="loader">
+	<div>
+		<svg version="1.1" id="L2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		  viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+		<circle fill="none" stroke="#fff" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="48"/>
+		<line fill="none" stroke-linecap="round" stroke="#fff" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="85" y2="50.5">
+		  <animateTransform 
+		       attributeName="transform" 
+		       dur="2s"
+		       type="rotate"
+		       from="0 50 50"
+		       to="360 50 50"
+		       repeatCount="indefinite" />
+		</line>
+		<line fill="none" stroke-linecap="round" stroke="#fff" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="49.5" y2="74">
+		  <animateTransform 
+		       attributeName="transform" 
+		       dur="15s"
+		       type="rotate"
+		       from="0 50 50"
+		       to="360 50 50"
+		       repeatCount="indefinite" />
+		</line>
+		</svg>
+		<h3>Please wait. Form Uploading.</h3>
+	</div>	
+</div>
+
 <div class="date-converter">
 	<iframe class="converter-frame" src="https://www.hamropatro.com/widgets/dateconverter.php" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" ></iframe>
 	<div class="icon">
@@ -564,9 +787,83 @@
 			</div>
 			<div class=" col-md-4">
 				<label for="applicant_citizenship_issue_district" class="form-label">Citizenship Issue District  <span class="text-danger"> * </span></label>
-				<select id="applicant_citizenship_issue_district" name="citizenship_issue_district" class="form-select" replaceLater ><option value="" selected>Select</option>
-					<option value="kailali">Kailali</option>
-					<option value="kanchanpur">Kanchanpur</option>
+				<select id="applicant_citizenship_issue_district" name="citizenship_issue_district" class="form-select" replaceLater >
+					<option value="">--Select District--</option>
+			    	<option value="achham">achham</option> 
+					<option value="arghakhanchi">arghakhanchi</option> 
+					<option value="baglung">baglung</option> 
+					<option value="baitadi">baitadi</option> 
+					<option value="bajhang">bajhang</option> 
+					<option value="bajura">bajura</option> 
+					<option value="banke">banke</option> 
+					<option value="bara">bara</option> 
+					<option value="bardiya">bardiya</option> 
+					<option value="bhaktapur">bhaktapur</option> 
+					<option value="bhojpur">bhojpur</option> 
+					<option value="chitwan">chitwan</option> 
+					<option value="dadeldhura">dadeldhura</option> 
+					<option value="dailekh">dailekh</option> 
+					<option value="dang deukhuri">dang deukhuri</option> 
+					<option value="darchula">darchula</option> 
+					<option value="dhading">dhading</option> 
+					<option value="dhankuta">dhankuta</option> 
+					<option value="dhanusa">dhanusa</option> 
+					<option value="dholkha">dholkha</option> 
+					<option value="dolpa">dolpa</option> 
+					<option value="doti">doti</option> 
+					<option value="gorkha">gorkha</option> 
+					<option value="gulmi">gulmi</option> 
+					<option value="humla">humla</option> 
+					<option value="ilam">ilam</option> 
+					<option value="jajarkot">jajarkot</option> 
+					<option value="jhapa">jhapa</option> 
+					<option value="jumla">jumla</option> 
+					<option value="kailali">kailali</option> 
+					<option value="kalikot">kalikot</option> 
+					<option value="kanchanpur">kanchanpur</option> 
+					<option value="kapilvastu">kapilvastu</option> 
+					<option value="kaski">kaski</option> 
+					<option value="kathmandu">kathmandu</option> 
+					<option value="kavrepalanchok">kavrepalanchok</option> 
+					<option value="khotang">khotang</option> 
+					<option value="lalitpur">lalitpur</option> 
+					<option value="lamjung">lamjung</option> 
+					<option value="mahottari">mahottari</option> 
+					<option value="makwanpur">makwanpur</option> 
+					<option value="manang">manang</option> 
+					<option value="morang">morang</option> 
+					<option value="mugu">mugu</option> 
+					<option value="mustang">mustang</option> 
+					<option value="myagdi">myagdi</option> 
+					<option value="nawalparasi">nawalparasi</option> 
+					<option value="nuwakot">nuwakot</option> 
+					<option value="okhaldhunga">okhaldhunga</option> 
+					<option value="palpa">palpa</option> 
+					<option value="panchthar">panchthar</option> 
+					<option value="parbat">parbat</option> 
+					<option value="parsa">parsa</option> 
+					<option value="pyuthan">pyuthan</option> 
+					<option value="ramechhap">ramechhap</option> 
+					<option value="rasuwa">rasuwa</option> 
+					<option value="rautahat">rautahat</option> 
+					<option value="rolpa">rolpa</option> 
+					<option value="rukum">rukum</option> 
+					<option value="rupandehi">rupandehi</option> 
+					<option value="salyan">salyan</option> 
+					<option value="sankhuwasabha">sankhuwasabha</option> 
+					<option value="saptari">saptari</option> 
+					<option value="sarlahi">sarlahi</option> 
+					<option value="sindhuli">sindhuli</option> 
+					<option value="sindhupalchok">sindhupalchok</option> 
+					<option value="siraha">siraha</option> 
+					<option value="solukhumbu">solukhumbu</option> 
+					<option value="sunsari">sunsari</option> 
+					<option value="surkhet">surkhet</option> 
+					<option value="syangja">syangja</option> 
+					<option value="tanahu">tanahu</option> 
+					<option value="taplejung">taplejung</option> 
+					<option value="terhathum">terhathum</option> 
+					<option value="udayapur">udayapur</option>
 				</select>
 			</div>
 			<div class=" col-md-4">
@@ -583,10 +880,10 @@
 		const citizenshipUploadFields = `
 		<div class="row gy-4 gx-5 citizenship-upload">
 			<div class="col-md-6">
-				<label class="form-label" for="applicant_citizenship_front">Citizenship (Front) <span class="text-danger"> *</span> </label>
+				<label class="form-label" for="applicant_citizenship_front">Citizenship (Front) / नागरिकता अगाडी <span class="text-danger"> *</span> </label>
 				<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="citizenship_front" id="applicant_citizenship_front" replaceLater>
 			</div>
-			<div class="col-md-6"><label class="form-label" for="applicant_citizenship_back">Citizenship (Back) <span class="text-danger"> *</span> </label>
+			<div class="col-md-6"><label class="form-label" for="applicant_citizenship_back">Citizenship (Back) / नागरिकता पछाडी  <span class="text-danger"> *</span> </label>
 			<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="citizenship_back" id="applicant_citizenship_back" replaceLater>
 			</div>
 		</div>`
@@ -661,16 +958,103 @@
 										<div class="col-md-4">
 										    <label for="nominee_district" class="form-label">District / जिल्ला <span class="text-danger"> *</span> </label>
 										    <select id="nominee_district" name="nominee_district" class="form-select" replaceLater>
-										      <option value="" selected>Select</option>
-										      <option value="kailali">Kailali</option>
+											      	<option value="">--Select District--</option>
+											    	<option value="achham">achham</option> 
+													<option value="arghakhanchi">arghakhanchi</option> 
+													<option value="baglung">baglung</option> 
+													<option value="baitadi">baitadi</option> 
+													<option value="bajhang">bajhang</option> 
+													<option value="bajura">bajura</option> 
+													<option value="banke">banke</option> 
+													<option value="bara">bara</option> 
+													<option value="bardiya">bardiya</option> 
+													<option value="bhaktapur">bhaktapur</option> 
+													<option value="bhojpur">bhojpur</option> 
+													<option value="chitwan">chitwan</option> 
+													<option value="dadeldhura">dadeldhura</option> 
+													<option value="dailekh">dailekh</option> 
+													<option value="dang deukhuri">dang deukhuri</option> 
+													<option value="darchula">darchula</option> 
+													<option value="dhading">dhading</option> 
+													<option value="dhankuta">dhankuta</option> 
+													<option value="dhanusa">dhanusa</option> 
+													<option value="dholkha">dholkha</option> 
+													<option value="dolpa">dolpa</option> 
+													<option value="doti">doti</option> 
+													<option value="gorkha">gorkha</option> 
+													<option value="gulmi">gulmi</option> 
+													<option value="humla">humla</option> 
+													<option value="ilam">ilam</option> 
+													<option value="jajarkot">jajarkot</option> 
+													<option value="jhapa">jhapa</option> 
+													<option value="jumla">jumla</option> 
+													<option value="kailali">kailali</option> 
+													<option value="kalikot">kalikot</option> 
+													<option value="kanchanpur">kanchanpur</option> 
+													<option value="kapilvastu">kapilvastu</option> 
+													<option value="kaski">kaski</option> 
+													<option value="kathmandu">kathmandu</option> 
+													<option value="kavrepalanchok">kavrepalanchok</option> 
+													<option value="khotang">khotang</option> 
+													<option value="lalitpur">lalitpur</option> 
+													<option value="lamjung">lamjung</option> 
+													<option value="mahottari">mahottari</option> 
+													<option value="makwanpur">makwanpur</option> 
+													<option value="manang">manang</option> 
+													<option value="morang">morang</option> 
+													<option value="mugu">mugu</option> 
+													<option value="mustang">mustang</option> 
+													<option value="myagdi">myagdi</option> 
+													<option value="nawalparasi">nawalparasi</option> 
+													<option value="nuwakot">nuwakot</option> 
+													<option value="okhaldhunga">okhaldhunga</option> 
+													<option value="palpa">palpa</option> 
+													<option value="panchthar">panchthar</option> 
+													<option value="parbat">parbat</option> 
+													<option value="parsa">parsa</option> 
+													<option value="pyuthan">pyuthan</option> 
+													<option value="ramechhap">ramechhap</option> 
+													<option value="rasuwa">rasuwa</option> 
+													<option value="rautahat">rautahat</option> 
+													<option value="rolpa">rolpa</option> 
+													<option value="rukum">rukum</option> 
+													<option value="rupandehi">rupandehi</option> 
+													<option value="salyan">salyan</option> 
+													<option value="sankhuwasabha">sankhuwasabha</option> 
+													<option value="saptari">saptari</option> 
+													<option value="sarlahi">sarlahi</option> 
+													<option value="sindhuli">sindhuli</option> 
+													<option value="sindhupalchok">sindhupalchok</option> 
+													<option value="siraha">siraha</option> 
+													<option value="solukhumbu">solukhumbu</option> 
+													<option value="sunsari">sunsari</option> 
+													<option value="surkhet">surkhet</option> 
+													<option value="syangja">syangja</option> 
+													<option value="tanahu">tanahu</option> 
+													<option value="taplejung">taplejung</option> 
+													<option value="terhathum">terhathum</option> 
+													<option value="udayapur">udayapur</option>
 										  	</select>
 										</div>
 
 										<div class="col-md-4">
 										    <label for="nominee_zone" class="form-label">Zone / अञ्चल <span class="text-danger"> *</span> </label>
 										    <select id="nominee_zone" name="nominee_zone" class="form-select" replaceLater>
-										      <option value="" selected>Select</option>
-										      <option value="seti">Seti</option>
+										    	<option value="">--Select Zone--</option>
+								                <option value="Bagmati">Bagmati</option>
+								                <option value="Bheri">Bheri</option>
+								                <option value="Dhawalagiri">Dhawalagiri</option>
+								                <option value="Gandaki">Gandaki</option>
+								                <option value="Janakpur">Janakpur</option>
+								                <option value="Karnali">Karnali</option>
+								                <option value="Kosi">Kosi</option>
+								                <option value="Lumbini">Lumbini</option>
+								                <option value="Mahakali">Mahakali</option>
+								                <option value="Mechi">Mechi</option>
+								                <option value="Narayani">Narayani</option>
+								                <option value="Rapti">Rapti</option>
+								                <option value="Sagarmatha">Sagarmatha</option>
+								                <option value="Seti">Seti</option>
 										  	</select>
 										</div>
 
@@ -712,8 +1096,8 @@
 										<div class="col-md-4"></div>
 
 										<div class="col-md-6">
-											<label class="form-label" for="nominee_signature">Nominee's Signature<span class="text-danger"> *</span> </label>
-											<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="nominee_signature" id="nominee_signature" replaceLater>
+											<label class="form-label" for="nominee_sign">Nominee's Signature<span class="text-danger"> *</span> </label>
+											<input type="file" accept=".png, .jpeg, .jpg" class="form-control" name="nominee_sign" id="nominee_sign" replaceLater>
 										</div>
 
 										<div class="col-md-6">
@@ -816,12 +1200,16 @@
 			}
 			console.log(dataJson)
 			const url = 'https://sahakaristore.lightwebgroup.com/customer/add.php'
-			console.log('fetch')
+			$('.loader').show()
 		  	fetch(url, {
 			    method: 'POST',
 			    body: dataJson,
 			    contentType: 'multipart/form-data'
-		  	}).then(response => response.json()).then(data => { console.log(data); })
+		  	}).then(response => response.json()).then(data => { 
+				$('.loader').hide()
+		  		console.log(data)
+		  		window.alert(data.message) 
+		  	})
 		})
 
 		//  Validations
